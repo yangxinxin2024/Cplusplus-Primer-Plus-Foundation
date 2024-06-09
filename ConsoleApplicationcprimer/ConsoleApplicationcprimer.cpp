@@ -3482,7 +3482,6 @@ int main()
 	outFile.close();
 
 }
-*/
 
 #include<iostream>
 #include<fstream>
@@ -3538,3 +3537,147 @@ int main()
 	}
 	inFile.close();
 }
+// ifelse.cpp -- using the if else statement
+#include <iostream>
+int main()
+{
+	char ch;
+
+	std::cout << "Type, and I shall repeat.\n";
+	std::cin.get(ch);
+	while (ch != '.')
+	{
+		if (ch == '\n')
+			std::cout << ch;     // done if newline
+		else
+			std::cout << ++ch;   // done otherwise
+		std::cin.get(ch);
+	}
+	// try ch + 1 instead of ++ch for interesting effect
+	std::cout << "\nPlease excuse the slight confusion.\n";
+	// std::cin.get();
+	// std::cin.get();
+	return 0;
+}
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	//Hi
+	//Send $10 or $20 now!
+	char ch;
+	int ct1, ct2;
+	ct1 = ct2 = 0;
+	while ((ch = cin.get()) != '$')
+	{
+		cout << ch;//Hi\nS e n  d 
+		ct1++;//1 2 3 4 5 6 7 8
+		if (ch = '$')//ch = $ ch =$ \n = $ . . . ..
+			ct2++;//1  2 3 4 5 6 7 8
+		cout << ch;//$$$$$$$$
+	}
+	cout << "ct1 = " << ct1 << " , ct2= " << ct2;
+}
+//H$i$
+//$S$e$n$d$ $
+
+#include<iostream>
+#include<cctype>
+#include "ConsoleApplicationcprimer.h"
+using namespace std;
+bool numberjud(int weight);
+int main()
+{
+	int n;
+	while (cin >> n)
+	{
+		bool flag = numberjud(n);
+		if (flag)
+		{
+			cout << "n = " << n << endl;
+			continue;;
+		}
+		else
+		{
+			break;
+		}
+	}
+}
+bool numberjud(int weight)
+{
+	if (((weight >= 115) ) && (weight <= 125))
+	{
+		cout << "vertification ok!";
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+	
+}
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	bool n = true;
+	if (!!n == n)
+	{
+		cout << "ok!" << endl;
+	}
+	else
+	{
+		cout << "some error    " << !!n << endl;
+	}
+}
+#include<iostream>
+using namespace std;
+int main()
+{
+	int x = 0;
+	cin >> x;
+	if (x < 0)
+		x = -x;
+	else
+		x = x;
+	cout << x;
+}
+
+//请重写该代码片段。不要使用break和continue.
+int line = 0;
+char ch;
+while (cin.get(ch))
+{
+	if (ch == 'Q')
+		break;
+	if (ch != '\n')
+		continue;
+	line++
+}
+#include<iostream>
+using namespace std;
+int main()
+{
+	//int line = 0;
+	//char ch;
+	//while (cin.get(ch) && !(ch == 'Q'))
+	//{
+	//	if (ch == '\n')
+	//		line++;
+	//}
+	//cout << "LINE   = " << line << endl;
+	int line = 0;
+	char ch;
+	while (cin.get(ch))
+	{
+		if (ch == 'Q')
+			break;
+		if (ch != '\n')
+			continue;
+		line++;
+	}
+	cout << "line = "<<line << endl;
+}
+*/
