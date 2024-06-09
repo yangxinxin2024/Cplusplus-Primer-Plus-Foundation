@@ -3370,7 +3370,7 @@ int main()
 	//	cin.get();    // wait for user to press <Enter>
 	return 0;
 }
-*/
+
 // cingolf.cpp -- non-numeric input skipped
 #include <iostream>
 const int Max = 5;
@@ -3403,4 +3403,138 @@ int main()
 	// cin.get();
 	// cin.get();
 	return 0;
+}
+
+#include<iostream>
+int main()
+{
+	using namespace std;
+	char ch;
+	cin >> ch;
+	cout << ch;
+}
+#include<iostream>
+int main()
+{
+	using namespace std;
+	char ch[50];
+	cin.getline(ch, 50);
+	cout << ch;
+}
+#include<iostream>
+#include<fstream> //for file I/O
+
+int main()
+{
+	using namespace std;
+	
+	char automobile[50];
+	int year;
+	double a_price;
+	double d_price;
+
+	ofstream outFile;//create an ofstream object for output
+
+	outFile.open("carinfo.txt");
+
+	cout << "Enter the make and model of automobile: ";
+
+	cin.getline(automobile, 50);
+
+	cout << "Enter the model year: ";
+
+	cin >> year;
+
+	cout << "Enter the original asking price: ";
+	cin >> a_price;
+	d_price = 0.913 * a_price;
+
+	//diaplay information on screen with cout
+
+	cout << fixed;//// set floatfield to fixed 这行代码设置了浮点数的输出格式为固定小数点表示法。这意味着浮点数将以固定的小数位数显示，而不是科学计数法。
+
+	cout.precision(3);//set precision to argument 这行代码设置了浮点数输出的精度为2位小数。这意味着无论实际的浮点数值是多少，都将显示两位小数。
+
+	cout.setf(ios_base::showpoint);//这行代码设置了输出时显示小数点后的零。即使小数部分为零，也会显示小数点和零
+
+	cout << "Make and model: " << automobile << endl;
+
+	cout << "Year: " << year << endl;
+
+	cout << "Was asking $" << a_price << endl;
+
+	cout << "Now asking $" << d_price << endl;
+
+	//using outFile instead of cout
+
+	outFile << fixed;
+	outFile.precision(2);
+	outFile.setf(ios_base::showpoint);
+
+	outFile << "Make and model: " << automobile << endl;
+
+	outFile << "Year: " << year << endl;
+
+	outFile << "Was asking $" << a_price << endl;
+
+	outFile << "Now asking $" << d_price << endl;
+	//done with file .
+	outFile.close();
+
+}
+*/
+
+#include<iostream>
+#include<fstream>
+#include<cstdlib>
+
+const int SIZE = 60;
+int main()
+{
+	using namespace std;
+
+	char filename[SIZE];
+	ifstream inFile;
+	cin.getline(filename, SIZE);
+
+	inFile.open(filename);
+
+	if (!inFile.is_open())
+	{
+		cout << "Could not open" << filename << endl;
+		cout << "exit()" << endl;
+		exit(EXIT_FAILURE);
+	}
+
+	double value;
+	double sum = 0;
+
+	int count = 0;
+	//最后一次的读取是否成功。
+//	inFile >> value;
+
+	while (inFile >> value)
+	{
+		++count;
+		sum += value;
+	//	inFile >> value;
+		cout << value << " ";
+	}
+	cout << endl;
+	if (inFile.eof())
+		cout << "End of file reached.\n";
+	else if (inFile.fail())
+		cout << "Input terminated by data mismatch.\n";
+	else
+		cout << "Input terminated for unknown reason.\n";
+
+	if (count == 0)
+		cout << "No data processed.\n";
+	else
+	{
+		cout << "Items read: " << count << endl;
+		cout << "Sum: " << sum << endl;
+		cout << "Average: " << sum / count << endl;
+	}
+	inFile.close();
 }
