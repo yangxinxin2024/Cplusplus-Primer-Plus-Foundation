@@ -397,9 +397,6 @@ double funBMI(const int & feet, const int & inches, const int & pound)
 	return resultBMI;
 }
 
-
-*/
-/*
 #include<iostream>
 using namespace std;
 int main()
@@ -979,9 +976,6 @@ int main()
 	cout << p.goodIn <<" " <<tr.SN <<endl;
 }
 
-*/
-///////////////
-/*
 #include<iostream>
 struct widget
 {
@@ -1156,7 +1150,7 @@ int main()
 	
 	//using pointer to change value
 	*p_updates = *p_updates + 1;
-	//*p_updates is the pointed value ,like a temp value ,using pointer can change its value.
+	//   *p_updates is the pointed value ,like a temp value ,using pointer can change its value.
 	cout << "Now update is" << updates << endl;
 	++(*p_updates);
 	cout << "Now update is" << updates << endl;
@@ -1312,7 +1306,7 @@ int main()
 	//指针数组： 本质上来说是一个数组，数组的元素是指针类型的。
 	const char * arra[4] = {"hello","world","shanxi","xian"};//[] 优先级高于 解引用 *运算符
 	cout << **(arra+1) << endl;//w
-	//*(*(arr+1)+0)
+	//  *(*(arr+1)+0)
 
 	//数组指针：本质上是一个指针，指针存放数组的首地址。
 	char(*pa)[4];//pa是一个指针，指向一个char[4]的数组。
@@ -1697,7 +1691,6 @@ int main()
 		<< "\n\t[Length]:\t" << (*wm).length << "\n\t[weight]:\t" << (*wm).weight << endl;
 	delete wm;
 }
-/*
 #include<iostream>
 #include<string>
 struct CandBar
@@ -2154,9 +2147,7 @@ int main()
 	}
 	// cin.get();
 	return 0;
-}*/
-
-/*
+}
 #include<iostream>
 using namespace std;
 int main()
@@ -3656,6 +3647,7 @@ while (cin.get(ch))
 		continue;
 	line++
 }
+
 #include<iostream>
 using namespace std;
 int main()
@@ -3680,4 +3672,113 @@ int main()
 	}
 	cout << "line = "<<line << endl;
 }
+#include<iostream>
+#include<cctype>
+int main()
+{
+	using namespace std;
+	cout << "please enter number: "<<endl;
+	char ch;
+	cin.get(ch);
+	while (ch != '@')
+	{
+		if (!isdigit(ch))
+		{
+			if (isalpha(ch))
+			{
+				if (islower(ch))
+				{
+					ch = toupper(ch);
+					cout << ch;
+				}
+				else if (isupper(ch))
+				{
+					ch = tolower(ch);
+					cout << ch;
+				}
+			}
+			else
+			{
+				cout << ch;
+			}
+
+		}
+
+		cin.get(ch);
+	}
+}
+
+#include<iostream>
+#include<array>
+int main()
+
+{
+	using namespace std;
+	double value;
+	array<double, 10> donation = { 0 };
+	int i = 0;
+	cout << "Please input value: \n";
+	double sum = 0;
+	cout << fixed;
+	cout.precision(3);
+	cout.setf(ios_base::showpoint);
+	int count = 0;
+
+
+	while (i < 10 && !(cin >> donation[i]).fail())
+	{
+		++i;
+	}
+
+	for (int j = 0; j < donation.size(); j++)
+	{
+		sum += donation[j];
+	}
+	cout << "average = " << sum / donation.size() << endl;
+	for (int j = 0; j < donation.size(); j++)
+	{
+		if (donation[j] > (sum / donation.size()))
+		{
+			count++;
+		}
+	}
+	cout << "There have " << count << " numbers bigger than average." << endl;
+}
+#include<iostream>
+using namespace std;
+int main()
+{
+	cout << "Please enter one of the following choices:\n\tc) carnivore\tp) pianist\n"
+		<< "\tt) tree\t\tg)game\n";
+	char ch;
+	while (cin >> ch)
+	{
+		if (!(ch == 'c' || ch == 'p' || ch == 't' || ch == 'g'))
+		{
+			std::cout << "Please enter a  c、p、t、 g:";
+		}
+		else
+		{
+			cout << "A maple is a ";
+			switch (ch)
+			{
+				case 'c':
+					cout << "carnivore."; break;
+				case 'p':
+					cout << "pianist."; break;
+				case 't':
+					cout << "tree."; break;
+				case 'g':
+					cout << "game."; break;
+				default:
+					break;
+			}
+			std::cout << "\nPlease enter a  c、p、t、 g:";
+
+		}
+	}
+
+}
 */
+
+

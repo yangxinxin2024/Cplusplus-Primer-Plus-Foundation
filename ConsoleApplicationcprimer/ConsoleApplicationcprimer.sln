@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.34526.175
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleApplicationcprimer", "ConsoleApplicationcprimer.vcxproj", "{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}"
 EndProject
@@ -17,8 +17,8 @@ Global
 		{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}.Debug|x64.Build.0 = Debug|x64
 		{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}.Debug|x86.ActiveCfg = Debug|Win32
 		{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}.Debug|x86.Build.0 = Debug|Win32
-		{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}.Release|x64.ActiveCfg = Release|x64
-		{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}.Release|x64.Build.0 = Release|x64
+		{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}.Release|x64.ActiveCfg = Debug|x64
+		{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}.Release|x64.Build.0 = Debug|x64
 		{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}.Release|x86.ActiveCfg = Release|Win32
 		{F6939BA0-DF27-4151-B7A0-FDA0356B1B5E}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
