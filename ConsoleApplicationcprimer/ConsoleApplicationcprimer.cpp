@@ -866,7 +866,7 @@ int main()
 
 #include<iostream>
 
-struct inflatable
+struct inflatable   WE	去i	
 {
 	char name[20];
 	float volume;
@@ -2794,6 +2794,40 @@ int main()
 
 
 //using std::string to overwrite it.
+
+#include <iostream>
+#include <string>
+
+int main() {
+	std::string input;
+	int wordCount = 0;
+
+	std::cout << "Enter a word (enter 'done' to quit):\n";
+
+	while (std::cin >> input && input != "done") {
+		wordCount++;
+	}
+
+	std::cout << "Number of words entered (excluding 'done'): " << wordCount << std::endl;
+
+	return 0;
+}
+#include<iostream>
+#include<string>
+#include<cstring>
+int  main()
+{
+	const int Arsize = 50;
+	char str[Arsize] = { 0 };
+	using namespace  std;
+	int  count = 0;
+	//string str;
+	while (cin >> str && strcmp("done", str))
+	{
+		count++;
+	}
+	cout << "the munber of input words=" << count;
+}
 #include<iostream>
 #include<string>
 #include<cstring>
@@ -3528,6 +3562,7 @@ int main()
 	}
 	inFile.close();
 }
+
 // ifelse.cpp -- using the if else statement
 #include <iostream>
 int main()
@@ -3779,6 +3814,396 @@ int main()
 	}
 
 }
+
+#include<iostream>
+#include<cstdlib>
+using  namespace std;
+//Benevolent Order Program name structure
+const int  strsize = 50;
+const int  bopmember = 5;
+struct Benevolent
+{
+	char fullname[strsize];//real name
+	char title[strsize];//job tittle
+	char bopname[strsize];//secret BOP name
+	int  perference;//0=fullname 1=title 2=bopname
+};
+//
+void diaplaybyname(const Benevolent benevolent[]);
+void diaplaybytitle(const Benevolent benevolent[]);
+void diaplaybybopname(const Benevolent benevolent[]);
+void diaplaybypreference(const Benevolent benevolent[]);
+int  main()
+{
+
+	//initialization proper value
+	Benevolent benevolent[bopmember] = {
+		{"Wimp Macho","Wimp cho","danny",0},
+		{"Dimp Macho","Dimp cho","jenny",1},
+		{"Fimp Macho","Fimp cho","fenny",2},
+		{"Timp Macho","Timp cho","carry",1},
+		{"Uimp Macho","Uimp cho","buddy",0},
+	};
+
+	cout<<"Benevolent  Order  of Programmers  Report\n"
+		"a.display by name\tb.display by title\n"
+		"c.display by bopname\td.display by  preference\n"
+		"q.quit";
+	char choice;
+	cout << "Enter your choice:";
+	while (cin>>choice)
+	{
+		switch (choice)
+		{
+		case 'a':
+			//display by name
+			diaplaybyname(benevolent);
+			break;
+		case 'b':
+			diaplaybytitle(benevolent);
+			//display by title
+			break;
+		case 'c':
+			diaplaybybopname(benevolent);
+			//display by benevolent name
+			break;
+		case 'd':
+			diaplaybypreference(benevolent);
+			//display by  preference
+			break;
+		case 'q':
+			//quit
+			cout<<"Bye!"<<endl;
+			exit(EXIT_FAILURE);
+			break;
+		default:
+			break;
+		}
+		cout << "Next  Choice:";
+
+	}
+
+}
+
+void diaplaybyname(const Benevolent benevolent[])
+{
+	for (int i = 0;i < bopmember;i++)
+	{
+		cout << benevolent[i].fullname << endl;
+	}
+
+}
+
+void diaplaybytitle(const Benevolent benevolent[])
+{
+	for (int i = 0;i < bopmember;i++)
+	{
+		cout << benevolent[i].title << endl;
+	}
+}
+
+void diaplaybybopname(const Benevolent benevolent[])
+{
+	for (int i = 0;i < bopmember;i++)
+	{
+		cout << benevolent[i].bopname << endl;
+	}
+}
+
+void diaplaybypreference(const Benevolent benevolent[])
+{
+	for (int i = 0;i < bopmember;i++)
+	{
+		//cout << benevolent[i].bopname << endl;
+		int preference = benevolent[i].perference;
+		switch (preference)
+		{
+		case 0:
+			cout << benevolent[i].fullname << endl;
+			break;
+		case 1:
+			cout << benevolent[i].title << endl;
+			break;
+		case 2:
+			cout << benevolent[i].bopname << endl;
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	double  tarps = 0.0;
+	int  avenue = 0;
+	cout<<"Please enter avenue:" << endl;
+	while (cin>>avenue)
+	{
+		if (avenue < 0)
+		{
+			cout << "bye!";
+			break;
+		}
+		//--------------------------------------------------------------36000----------
+		//0 -----5000--[5001--------15000]---[15001--------35000]-[35001-----40000]--
+		//    0               0.1                  0.15                   0.2
+		if (avenue <= 5000)
+		{
+			tarps = 0.0;
+			cout << "[TARPS]=" << tarps << endl;
+		}
+		else if(5000<avenue && 15001>avenue)
+		{
+			tarps = (avenue - 5000) * 0.1;
+			cout << "[TARPS]=" << tarps << endl;
+		}
+		else if (15000 < avenue && 35001 > avenue)
+		{
+			tarps = (avenue - 15000) * 0.15 + 10000 * 0.1;
+			cout << "[TARPS]=" << tarps << endl;
+		}
+		else if (35000 < avenue)
+		{	
+			tarps = (avenue - 35000) * 0.2 + 20000 * 0.15 + 10000 * 0.1;
+			cout << "[TARPS]=" << tarps << endl;
+		}
+	}
+	cout << "bye...." << endl;
+}
+
+#include<iostream>
+#include<string>
+#include<cstring>
+using  namespace std;
+struct Patrons
+{
+	string  name;
+	double patr;
+};
+int  main()
+{
+	int n;
+	cout << "Please enter  the number of Parts:";
+	cin >> n;
+	Patrons* partrons = new Patrons[n];
+	int t = 0;
+	cin.get();
+	while (t < n)
+	{
+		cout << "Please enter No.["<< t+1 << "]\tinformations:\n";
+		cout << "Please enter name:";
+		getline(cin, partrons[t].name);
+		cout << "Please enter patr:";
+		cin>>partrons[t].patr;
+		t++;
+		cin.get();
+	}
+	//
+	cout << "Grand  Patrons:" << endl;
+	int   grand = 0;
+	for (int i = 0;i < n;i++)
+	{
+		if (partrons[i].patr > 10000)
+		{
+			grand++;
+			cout << "name:" << partrons[i].name;
+			cout << "\tpart:" << partrons[i].patr;
+			cout << endl;
+		}
+	}
+	if(grand == 0)
+	{
+		cout << "none" << endl;
+	}
+
+	cout << "Patrons:" << endl;
+	int   nogrand = 0;
+	for (int i = 0;i < n;i++)
+	{
+
+		if (partrons[i].patr < 10000)
+		{
+			cout << "name:" << partrons[i].name;
+			cout << "\tpart:" << partrons[i].patr;
+			cout << endl;
+		}
+	}
+	delete[]partrons;
+
+}
+
+#include <iostream>
+#include <cctype>
+#include <string>
+
+bool isVowel(char c) {
+	c = tolower(c);
+	return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+}
+
+int main() {
+	std::string word;
+	int vowelCount = 0;
+	int consonantCount = 0;
+	int otherCount = 0;
+
+	std::cout << "Enter a word (enter 'q' to quit):\n";
+
+	while (std::cin >> word && word != "q") {
+		if (isalpha(word[0])) {
+			if (isVowel(word[0])) {
+				vowelCount++;
+			}
+			else {
+				consonantCount++;
+			}
+		}
+		else {
+			otherCount++;
+		}
+	}
+
+	std::cout << "Words that start with a vowel: " << vowelCount << std::endl;
+	std::cout << "Words that start with a consonant: " << consonantCount << std::endl;
+	std::cout << "Words that don't start with a letter: " << otherCount << std::endl;
+
+	return 0;
+}
+
+#include<iostream>
+#include<string>
+#include<cctype>
+int main()
+{
+	using  namespace  std;
+	string  str;
+	cout << "Enter   q to quit:\n";
+	int acount = 0;
+	int noacount = 0;
+	int others = 0;
+	while (cin >> str && str != "q")
+	{
+		if (isalpha(str[0]))
+		{
+			char c = tolower(str[0]);
+			if ( c  == 'e' || c == 'a'
+				|| c == 'i' || c == 'o' || c == 'u')
+			{
+				acount++;
+			}
+			else
+			{
+				noacount++;
+			}
+			
+		}
+		else
+		{
+			others++;
+		}
+	}
+	cout << acount << " words beginning  with  vowels\n"
+		<< noacount << " words beginng with consonants\n"
+		<< others << " words.\n";
+}
+
+#include<iostream>
+#include<fstream>
+#include<cstdlib>
+int main()
+{
+	using namespace std;
+	ifstream inFile;
+	inFile.open("chaptersixtoexght.txt");
+	int count = 0;
+	if (!inFile.is_open())
+	{
+		cout << "could not open" << "chaptersixtoexght.txt" << endl;
+		exit(EXIT_FAILURE);
+	}
+	char c;
+	while (inFile.get(c))
+	{
+		count++;
+		cout.put(c);
+	}
+	if (inFile.eof())
+	{
+		cout << "The number  of character is:" << count << endl;
+		cout << "End of file reached!";
+	}	
+	inFile.close();
+}
+
+//Patrons.txt
+#include<iostream>
+#include<fstream>
+#include<string>
+#include<cstring>
+#include<cstdlib>
+using  namespace std;
+struct Patrons
+{
+	string  name;
+	double patr;
+};
+int  main()
+{
+	ifstream inFile;
+	inFile.open("Patrons.txt");
+	if (!inFile.is_open())
+	{
+		exit(EXIT_FAILURE);
+	}
+	int  n = 0;
+	inFile>>n;
+	cout << n << endl;;
+	Patrons* partrons = new Patrons[n];
+	int i = 0;
+	inFile.get();
+	while (i < n)
+	{
+		getline(inFile, partrons[i].name);
+		cout << partrons[i].name << endl;;
+		inFile >>partrons[i].patr;
+		cout << partrons[i].patr << endl;;
+		i++;
+		inFile.get();
+	}
+	////
+	cout << "Grand  Patrons:" << endl;
+	int   grand = 0;
+	for (int i = 0;i < n;i++)
+	{
+		if (partrons[i].patr > 10000)
+		{
+				grand++;
+				cout << "name:" << partrons[i].name;
+				cout << "\tpart:" << partrons[i].patr;
+				cout << endl;
+		}
+	}
+	if (grand == 0)
+	{
+		cout << "none" << endl;
+	}
+
+	cout << "Patrons:" << endl;
+	int   nogrand = 0;
+	for (int i = 0;i < n;i++)
+	{
+
+		if (partrons[i].patr < 10000)
+		{
+			cout << "name:" << partrons[i].name;
+			cout << "\tpart:" << partrons[i].patr;
+			cout << endl;
+		}
+	}
+	delete[]partrons;
+	inFile.close();
+}
 */
-
-
